@@ -1,0 +1,83 @@
+//colors
+$color_alice_blue_approx: #f1f7fc;
+$white: #fff;
+$color_comet_approx: #505e6c;
+$black_10: rgba(0,0,0,.1);
+$color_carnation_approx: #f4476b;
+$color_white_lilac_approx: #f7f9fc;
+$color_mystic_approx: #dfe7f1;
+$color_cerise_red_approx: #eb3b60;
+$color_pale_sky_approx: #6f7a85;
+
+.login-clean {
+  background: $color_alice_blue_approx;
+  padding: 80px 0;
+  form {
+    max-width: 320px;
+    width: 90%;
+    margin: 0 auto;
+    background-color: $white;
+    padding: 40px;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 4px;
+    color: $color_comet_approx;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 1px 1px 5px $black_10;
+    .form-control {
+      background: $color_white_lilac_approx;
+      border: none;
+      border-bottom: 1px solid $color_mystic_approx;
+      //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+      border-radius: 0;
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: none;
+      outline: 0;
+      color: inherit;
+      text-indent: 8px;
+      height: 42px;
+    }
+    .btn-primary {
+      background: $color_carnation_approx;
+      border: none;
+      //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+      border-radius: 4px;
+      padding: 11px;
+      //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: none;
+      margin-top: 26px;
+      //Instead of the line below you could use @include text-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      text-shadow: none;
+      outline: 0!important;
+      &:active {
+        background: $color_cerise_red_approx;
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: translateY(1px);
+      }
+      &:hover {
+        background: $color_cerise_red_approx;
+      }
+    }
+    .forgot {
+      display: block;
+      text-align: center;
+      font-size: 12px;
+      color: $color_pale_sky_approx;
+      opacity: .9;
+      text-decoration: none;
+      &:active {
+        opacity: 1;
+        text-decoration: none;
+      }
+      &:hover {
+        opacity: 1;
+        text-decoration: none;
+      }
+    }
+  }
+  .illustration {
+    text-align: center;
+    padding: 0 0 20px;
+    font-size: 100px;
+    color: $color_carnation_approx;
+  }
+}
