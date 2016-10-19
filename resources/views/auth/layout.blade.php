@@ -11,6 +11,8 @@
     <body>
         <div class="login-clean">
                 <div class="illustration"><i class="fa fa-tree"></i></div>
+                <h2 class="text-center">{{config('site.title')}}</h2>
+                <h3 class="text-center">@yield('title')</h3>
                 @yield('content')
         </div>
         <script src="/js/app.js"></script>

@@ -11,13 +11,13 @@ $color_pale_sky_approx: #6f7a85;
 
 .login-clean {
   background: $color_alice_blue_approx;
-  padding: 80px 0;
+  padding: 20px 0;
   form {
     max-width: 320px;
     width: 90%;
     margin: 0 auto;
     background-color: $white;
-    padding: 40px;
+    padding: 10px;
     //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
     border-radius: 4px;
     color: $color_comet_approx;
@@ -76,7 +76,7 @@ $color_pale_sky_approx: #6f7a85;
   }
   .illustration {
     text-align: center;
-    padding: 0 0 20px;
+    //padding: 0 0 10px;
     font-size: 100px;
     color: $color_carnation_approx;
   }

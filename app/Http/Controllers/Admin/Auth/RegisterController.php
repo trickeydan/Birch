@@ -1,6 +1,6 @@
 <?php
 
-namespace Birch\Http\Controllers\Auth;
+namespace Birch\Http\Controllers\Admin\Auth;
 
 use Birch\User;
 use Birch\Http\Controllers\Controller;
@@ -27,7 +27,10 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    public function redirectPath()
+    {
+        return route('admin.dashboard');
+    }
 
     /**
      * Create a new controller instance.

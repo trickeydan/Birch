@@ -1,6 +1,7 @@
 <?php
 
-namespace Birch\Http\Controllers\Auth;
+
+namespace Birch\Http\Controllers\Admin\Auth;
 
 use Birch\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
