@@ -1,7 +1,6 @@
 <?php
 
-namespace Birch\Http\Controllers\Auth;
-
+namespace Birch\Http\Controllers\Admin\Auth;
 use Birch\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
@@ -25,7 +24,10 @@ class ResetPasswordController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    public function redirectPath()
+    {
+        return route('admin.dashboard');
+    }
 
     /**
      * Create a new controller instance.
