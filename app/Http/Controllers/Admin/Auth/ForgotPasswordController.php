@@ -30,4 +30,12 @@ class ForgotPasswordController extends Controller
     {
         $this->middleware('guest');
     }
+
+    public function showLinkRequestForm(){
+        if(config('site.enable_password_reset')){
+            return view('auth.passwords.email');
+        }else{
+            return redirect('login');
+        }
+    }
 }

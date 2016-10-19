@@ -46,7 +46,7 @@
             <input class="form-control" type="password" name="password_confirmation" placeholder="Confirm Password" required>
             @if ($errors->has('password_confirmation'))
                 <span class="help-block">
-                    <strong>{{ $errors->first('password') }}</strong>
+                    <strong>{{ $errors->first('password_confirmation') }}</strong>
                 </span>
             @endif
         </div>

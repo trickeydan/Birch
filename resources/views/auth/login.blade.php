@@ -32,7 +32,9 @@
         <div class="form-group">
             <button class="btn btn-primary btn-block" type="submit">Log In</button>
         </div>
-        <a href="{{ url('/password/reset') }}" class="forgot">Forgot your password?</a>
+        @if(config('site.enable_password_reset'))
+            <a href="{{ url('/password/reset') }}" class="forgot">Forgot your password?</a>
+        @endif
         @if(config('site.enable_user_registration'))
             <a href="{{ url('/register') }}" class="forgot">Register</a>
         @endif
