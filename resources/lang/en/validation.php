@@ -99,7 +99,10 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+
     ],
+
+    'pwdcorrect' => 'Your old password was wrong!',
 
     /*
     |--------------------------------------------------------------------------

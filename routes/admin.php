@@ -18,6 +18,13 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 Route::group(['prefix' => config('site.admin_url'),'middleware' => 'auth'],function(){
 
     Route::get('/','DashboardController@index')->name('admin.dashboard');
+
+    Route::group(['prefix' => 'settings'],function(){
+        Route::get('/','SettingsController@index')->name('admin.settings');
+
+        Route::get('changepassword','SettingsController@passwordChange')->name('settings.changepassword');
+        Route::post('changepassword','SettingsController@passwordChangePost')->name('settings.changepassword.post');
+    });
 });
 
 

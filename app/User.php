@@ -26,4 +26,22 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    const FIELDS = [
+        'username' => [
+            'title' => 'Username',
+            'validation' => 'required|max:50|min:2',//|unique:users,username',
+            'editable' => false,
+        ],
+        'name' => [
+            'title' => 'Name',
+            'validation' => 'required|max:50|min:2',
+            'editable' => true,
+        ],
+        'email' => [
+            'title'  => 'Email',
+            'validation' => 'required|max:50|min:2',
+            'editable' => true,
+        ],
+    ];
 }
