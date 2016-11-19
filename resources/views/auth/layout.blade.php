@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>@yield('title') | {{ config('site.title','Birch') }}</title>
-        <link href="/css/login.css" rel="stylesheet">
+        <link href="{{asset('css/login.css')}}" rel="stylesheet">
     </head>
 
     <body>
@@ -15,7 +15,7 @@
                 <h3 class="text-center">@yield('title')</h3>
                 @yield('content')
         </div>
-        <script src="/js/app.js"></script>
+        <script src="{{asset('js/app.js')}}"></script>
     </body>
 
 </html>

@@ -2,7 +2,7 @@
 
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
-Route::get('logout', 'Auth\LoginController@logout');
+Route::post('logout', 'Auth\LoginController@logout');
 
 // Registration Routes...
 Route::get('register', 'Auth\RegisterController@showRegistrationForm');
@@ -17,9 +17,7 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::group(['prefix' => config('site.admin_url'),'middleware' => 'auth'],function(){
 
-    Route::get('/', function (){
-        return "Birch CMS Admin Dashboard!";
-    })->name('admin.dashboard');
+    Route::get('/','DashboardController@index')->name('admin.dashboard');
 });
 
 

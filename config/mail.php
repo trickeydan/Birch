@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => 'hello@example.com',
-        'name' => 'Example',
+        'address' => env('SITE_EMAIL','site@birch.net'),
+        'name' => env('SITE_EMAIL_NAME','Birch CMS'),
     ],
 
     /*
