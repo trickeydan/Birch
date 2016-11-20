@@ -2,6 +2,7 @@
 
 namespace Birch\Http\Controllers\Admin\Auth;
 
+use Birch\Group;
 use Birch\User;
 use Birch\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -71,6 +72,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'group_id' => Group::whereSlug('default')->first()->id,
         ]);
     }
 

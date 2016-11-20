@@ -16,7 +16,7 @@
         </div>
 
         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-            <input class="form-control" type="text" name="username" placeholder="Name" value="{{ old('name') }}" required>
+            <input class="form-control" type="text" name="name" placeholder="Name" value="{{ old('name') }}" required>
             @if ($errors->has('name'))
                 <span class="help-block">
                     <strong>{{ $errors->first('name') }}</strong>

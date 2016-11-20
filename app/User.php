@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'username','name', 'email', 'password',
+        'username','name', 'email', 'password','group_id'
     ];
 
     /**
@@ -43,5 +43,18 @@ class User extends Authenticatable
             'validation' => 'required|max:50|min:2',
             'editable' => true,
         ],
+        'group' => [
+            'title' => 'Group',
+            'validation' => 'required|integer',
+            'editable' => false,
+        ]
     ];
+
+    public function group(){
+        return $this->belongsTo('Birch\Group');
+    }
+
+    public function hasPermission($permission){
+        return $this->group->hasPermission($permission);
+    }
 }

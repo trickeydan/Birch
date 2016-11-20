@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Birch\Group;
 
-class DatabaseSeeder extends Seeder
+class GroupSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +12,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         $this->call(GroupSeeder::class);
-         $this->call(PermissionSeeder::class);
+        Group::create([
+            'slug' => 'default',
+            'name' => 'Default'
+        ]);
     }
 }
