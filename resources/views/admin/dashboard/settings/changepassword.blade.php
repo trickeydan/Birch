@@ -18,7 +18,7 @@
             </ul>
         </div>
     @endif
-    {!! Form::open(array('route' => 'settings.changepassword.post','role' => 'form', 'method' => 'post')) !!}
+    {!! Form::open(array('route' => 'admin.settings.changepassword.post','role' => 'form', 'method' => 'post')) !!}
     @if (count($errors) > 0)
         <div class="alert alert-danger">
             <ul>
