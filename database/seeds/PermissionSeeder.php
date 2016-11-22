@@ -24,8 +24,12 @@ class PermissionSeeder extends Seeder
             ],
                 'admin.settings.changepassword' => [
                     'name' => 'Change password',
-                    'groups' =>[],// ['default'],
+                    'groups' => ['default'],
                 ],
+            'admin.users.index' => [
+                'name' => 'Users Index',
+                'groups' => ['admin'],
+            ],
         ];
         foreach ($permissions as $slug => $parameters){
             $perm = Permission::create([

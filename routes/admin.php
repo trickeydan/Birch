@@ -25,6 +25,10 @@ Route::group(['prefix' => config('site.admin_url'),'middleware' => 'auth'],funct
         Route::get('changepassword','SettingsController@passwordChange')->middleware('perm:admin.settings.changepassword')->name('admin.settings.changepassword');
         Route::post('changepassword','SettingsController@passwordChangePost')->middleware('perm:admin.settings.changepassword')->name('admin.settings.changepassword.post');
     });
+
+    Route::group(['prefix' => 'users'],function(){
+        Route::get('/','UserController@index')->middleware('perm:admin.users.index')->name('admin.users.index');
+    });
 });
 
 

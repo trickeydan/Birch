@@ -5,9 +5,9 @@ return [
     'menu' => [
 
         'admin.dashboard' => [],
-        'admin.settings.changepassword' => []
 
-        //'settingsmenu' => ['admin.settings','admin.dashboard','settings.changepassword']
+        'admin.users.index' => [],
+
     ],
 
     'pages' => [
@@ -29,12 +29,12 @@ return [
                 'perm' => 'admin.settings.changepassword',
                 'parent' => 'admin.settings.index',
             ],
-        /*'admin.users' => [
+        'admin.users.index' => [
             'title' => 'Users',
             'icon' => 'users',
-            'perm' => 'settings.index',
+            'perm' => 'admin.users.index',
             'parent' => 'admin.dashboard',
-        ],*/
+        ],
     ]
 
 
