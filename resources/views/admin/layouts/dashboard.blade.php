@@ -34,9 +34,7 @@
             <div class="page-header">
                 <h1>@yield('title')<small> @yield('description')</small></h1>
                 <ol class="breadcrumb">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Library</a></li>
-                    <li class="active">Data</li>
+                    {!!\Birch\Managers\BreadcrumbManager::getHtml(\Request::route()->getName(),'',true)!!}
                 </ol>
             </div>
 
