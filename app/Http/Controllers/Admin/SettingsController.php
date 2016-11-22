@@ -36,6 +36,6 @@ class SettingsController extends Controller
         $user->save();
         $user->notify(new PasswordChanged());
 
-        return redirect(route('admin.settings'))->with('status','Password Changed');
+        return redirect(route('admin.settings.index'))->with('status','Password Changed');
     }
 }

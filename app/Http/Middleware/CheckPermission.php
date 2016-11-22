@@ -18,8 +18,8 @@ class CheckPermission
     public function handle($request, Closure $next, $type)
     {
         if(!Auth::User()->hasPermission($type)){
-            if(Auth::User()->hasPermission('dashboard')){
-                return redirect(route('admin.dashboard'))->withErrors('You don\'t have permission to access that.');
+            if(Auth::User()->hasPermission('admin.dashboard')){
+                return back()->withErrors('You don\'t have permission to access that.');
             }else{
                 Auth::guard()->logout();
 

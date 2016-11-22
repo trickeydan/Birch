@@ -14,18 +14,18 @@ class PermissionSeeder extends Seeder
     public function run()
     {
         $permissions = [
-            'dashboard' => [
+            'admin.dashboard' => [
                 'name' => 'Dashboard',
                 'groups' => ['default'],
             ],
-            'settings.index' => [
+            'admin.settings.index' => [
                 'name' => 'Settings Index',
                 'groups' => ['default'],
             ],
-            'settings.changepassword' => [
-                'name' => 'Change password',
-                'groups' => ['default'],
-            ],
+                'admin.settings.changepassword' => [
+                    'name' => 'Change password',
+                    'groups' =>[],// ['default'],
+                ],
         ];
         foreach ($permissions as $slug => $parameters){
             $perm = Permission::create([

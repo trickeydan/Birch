@@ -4,6 +4,7 @@ namespace Birch;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Barryvdh\Debugbar\Facade as Debugbar;
 
 class User extends Authenticatable
 {
@@ -55,6 +56,9 @@ class User extends Authenticatable
     }
 
     public function hasPermission($permission){
+        if($this->group->hasPermission($permission)){
+            Debugbar::info($permission);
+        }
         return $this->group->hasPermission($permission);
     }
 }

@@ -4,6 +4,7 @@
 namespace Birch\Managers;
 
 use Illuminate\Support\Facades\Route;
+use Barryvdh\Debugbar\Facade as Debug;
 
 class BreadcrumbManager
 {
@@ -39,6 +40,7 @@ class BreadcrumbManager
     }
 
     public static function getName($route){
+
         return self::getDetails($route)['title'];
     }
 

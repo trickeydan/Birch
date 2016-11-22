@@ -5,6 +5,7 @@ return [
     'menu' => [
 
         'admin.dashboard' => [],
+        'admin.settings.changepassword' => []
 
         //'settingsmenu' => ['admin.settings','admin.dashboard','settings.changepassword']
     ],
@@ -13,21 +14,27 @@ return [
         'admin.dashboard' => [
             'title' => 'Dashboard',
             'icon' => 'tachometer',
-            'perm' => 'dashboard',
+            'perm' => 'admin.dashboard',
             'parent' => '0',
         ],
-        'admin.settings' => [
+        'admin.settings.index' => [
             'title' => 'Settings',
             'icon' => 'cogs',
-            'perm' => 'settings.index',
+            'perm' => 'admin.settings.index',
             'parent' => 'admin.dashboard',
         ],
             'admin.settings.changepassword' => [
                 'title' => 'Change Password',
                 'icon' => 'key',
-                'perm' => 'settings.changepassword',
-                'parent' => 'admin.settings',
+                'perm' => 'admin.settings.changepassword',
+                'parent' => 'admin.settings.index',
             ],
+        /*'admin.users' => [
+            'title' => 'Users',
+            'icon' => 'users',
+            'perm' => 'settings.index',
+            'parent' => 'admin.dashboard',
+        ],*/
     ]
 
 
