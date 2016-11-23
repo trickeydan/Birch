@@ -28,6 +28,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+
     const FIELDS = [
         'username' => [
             'title' => 'Username',
@@ -50,6 +51,11 @@ class User extends Authenticatable
             'editable' => false,
         ]
     ];
+
+    public function getRouteKeyName()
+    {
+        return 'username';
+    }
 
     public function group(){
         return $this->belongsTo('Birch\Group');

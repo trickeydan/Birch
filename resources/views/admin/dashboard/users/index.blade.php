@@ -17,6 +17,7 @@
                 <thead>
                     <td>Name</td>
                     <td>Username</td>
+                    <td>Group</td>
                     <td>Options</td>
                 </thead>
                 <tbody>
@@ -24,7 +25,8 @@
                     <tr>
                         <td>{{$usr->name}}</td>
                         <td>{{$usr->username}}</td>
-                        <td><a href="#">View</a></td>
+                        <td>{{$usr->group}}</td>
+                        <td><a href="{{route('admin.users.view',$usr->username)}}">View</a></td>
                     </tr>
                 @endforeach
                 </tbody>
