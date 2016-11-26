@@ -28,6 +28,10 @@ Route::group(['prefix' => config('site.admin_url'),'middleware' => 'auth'],funct
 
     Route::group(['prefix' => 'users'],function(){
         Route::get('/','UserController@index')->middleware('perm:admin.users.index')->name('admin.users.index');
+
+        Route::get('create','UserController@create')->middleware('perm:admin.users.create')->name('admin.users.create');
+        Route::post('create','UserController@createPost')->middleware('perm:admin.users.create')->name('admin.users.create');
+
         Route::get('{user}','UserController@view')->middleware('perm:admin.users.view')->name('admin.users.view');
     });
 });

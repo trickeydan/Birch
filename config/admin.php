@@ -35,6 +35,12 @@ return [
             'perm' => 'admin.users.index',
             'parent' => 'admin.dashboard',
         ],
+            'admin.users.create' => [
+                'title' => 'Create User',
+                'icon' => 'user-plus',
+                'perm' => 'admin.users.create',
+                'parent' => 'admin.users.index',
+            ],
             'admin.users.view' => [
                 'title' => 'View User',
                 'icon' => 'user',

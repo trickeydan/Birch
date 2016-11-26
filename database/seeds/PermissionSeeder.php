@@ -30,6 +30,10 @@ class PermissionSeeder extends Seeder
                 'name' => 'Users Index',
                 'groups' => ['admin'],
             ],
+                'admin.users.create' => [
+                    'name' => 'Create Users',
+                    'groups' => ['admin'],
+                ],
                 'admin.users.view' => [
                     'name' => 'View Users',
                     'groups' => ['admin'],

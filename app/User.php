@@ -2,6 +2,7 @@
 
 namespace Birch;
 
+use Birch\Notifications\NewUser;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Barryvdh\Debugbar\Facade as Debugbar;
@@ -47,8 +48,9 @@ class User extends Authenticatable
         ],
         'group' => [
             'title' => 'Group',
-            'validation' => 'required|integer',
+            'validation' => '',
             'editable' => false,
+            'autofill' => 'Default',
         ]
     ];
 
@@ -60,6 +62,22 @@ class User extends Authenticatable
     public function group(){
         return $this->belongsTo('Birch\Group');
     }
+
+    public static function newUser($username, $name,$email,$password = null){
+        if($password == null){
+            $password = str_random();
+        }
+        $u =  User::create([
+            'username' => $username,
+            'name' => $name,
+            'email' => $email,
+            'password' => bcrypt($password),
+            'group_id' => Group::whereSlug('default')->first()->id,
+        ]);
+        $u->notify(new NewUser($password));
+        return $u;
+    }
+
 
     public function hasPermission($permission){
         if($this->group->hasPermission($permission)){
