@@ -23,6 +23,10 @@ class Group extends Model
         return $this->belongsTo('Birch\Group','parentgroup_id');
     }
 
+    public function children(){
+        return $this->hasMany('Birch\Group','id','parentgroup_id');
+    }
+
     public function hasPermission($permission){
         if($this->permissions()->whereSlug($permission)->count() > 0){
             return true;

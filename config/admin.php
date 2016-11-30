@@ -7,6 +7,7 @@ return [
         'admin.dashboard' => [],
 
         'admin.users.index' => [],
+        'admin.groups.index' => [],
 
     ],
 
@@ -65,6 +66,12 @@ return [
                 'perm' => 'admin.users.sendresetlink',
                 'parent' => 'admin.users.index',
             ],
+        'admin.groups.index' =>[
+            'title' => 'Groups',
+            'icon' => 'lock',
+            'perm' => 'admin.groups.index',
+            'parent' => 'admin.dashboard',
+        ]
     ]
 
 

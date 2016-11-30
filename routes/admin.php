@@ -43,6 +43,10 @@ Route::group(['prefix' => config('site.admin_url'),'middleware' => 'auth'],funct
 
         Route::get('{user}/resetlink','UserController@sendResetLink')->middleware('perm:admin.users.sendresetlink')->name('admin.users.sendresetlink');
     });
+
+    Route::group(['prefix' => 'groups'],function(){
+       Route::get('/','GroupController@index')->middleware('perm:admin.groups.index')->name('admin.groups.index');
+    });
 });
 
 

@@ -50,6 +50,10 @@ class PermissionSeeder extends Seeder
                     'name' => 'Send Password Reset Link',
                     'groups' => ['admin'],
                 ],
+            'admin.groups.index' => [
+                'name' => 'Groups Index',
+                'groups' => ['admin'],
+            ],
         ];
         foreach ($permissions as $slug => $parameters){
             $perm = Permission::create([
