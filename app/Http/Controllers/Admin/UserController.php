@@ -47,6 +47,7 @@ class UserController extends Controller
             'fields' => User::FIELDS,
         ]);
     }
+
     public function updatePost(Request $request,User $user){
         $arr = [];
         foreach(User::FIELDS as $field => $data){
@@ -59,5 +60,10 @@ class UserController extends Controller
         $user->save();
         return redirect(route('admin.users.view',$user))->with('status','Updated user.');
 
+    }
+
+    public function sendResetLink(User $user){
+        $user->sendResetLink();
+        return redirect(route('admin.users.view',$user))->with('status','Reset link sent.');
     }
 }

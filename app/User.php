@@ -6,6 +6,7 @@ use Birch\Notifications\NewUser;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Barryvdh\Debugbar\Facade as Debugbar;
+use Illuminate\Support\Facades\Password;
 
 class User extends Authenticatable
 {
@@ -84,5 +85,9 @@ class User extends Authenticatable
             Debugbar::info($permission);
         }
         return $this->group->hasPermission($permission);
+    }
+
+    public function sendResetLink(){
+        Password::broker()->sendResetLink(['email' => $this->getEmailForPasswordReset()]);
     }
 }

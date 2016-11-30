@@ -40,6 +40,8 @@ Route::group(['prefix' => config('site.admin_url'),'middleware' => 'auth'],funct
 
         Route::get('{user}/update','UserController@update')->middleware('perm:admin.users.update')->name('admin.users.update');
         Route::put('{user}/update','UserController@updatePost')->middleware('perm:admin.users.update')->name('admin.users.update');
+
+        Route::get('{user}/resetlink','UserController@sendResetLink')->middleware('perm:admin.users.sendresetlink')->name('admin.users.sendresetlink');
     });
 });
 

@@ -59,6 +59,12 @@ return [
                 'perm' => 'admin.users.view',
                 'parent' => 'admin.users.index',
             ],
+            'admin.users.sendresetlink' => [
+                'title' => 'Send Reset Link',
+                'icon' => 'user',
+                'perm' => 'admin.users.sendresetlink',
+                'parent' => 'admin.users.index',
+            ],
     ]
 
 
