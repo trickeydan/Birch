@@ -37,6 +37,9 @@ Route::group(['prefix' => config('site.admin_url'),'middleware' => 'auth'],funct
         Route::post('create','UserController@createPost')->middleware('perm:admin.users.create')->name('admin.users.create');
 
         Route::get('{user}','UserController@view')->middleware('perm:admin.users.view')->name('admin.users.view');
+
+        Route::get('{user}/update','UserController@update')->middleware('perm:admin.users.update')->name('admin.users.update');
+        Route::put('{user}/update','UserController@updatePost')->middleware('perm:admin.users.update')->name('admin.users.update');
     });
 });
 

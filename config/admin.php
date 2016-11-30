@@ -53,6 +53,12 @@ return [
                 'perm' => 'admin.users.view',
                 'parent' => 'admin.users.index',
             ],
+            'admin.users.update' => [
+                'title' => 'Update User',
+                'icon' => 'user',
+                'perm' => 'admin.users.view',
+                'parent' => 'admin.users.index',
+            ],
     ]
 
 

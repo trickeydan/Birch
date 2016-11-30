@@ -40,4 +40,24 @@ class UserController extends Controller
             'fields' => User::FIELDS,
         ]);
     }
+
+    public function update(User $user){
+        return view('admin.dashboard.users.update',[
+            'viewing' => $user,
+            'fields' => User::FIELDS,
+        ]);
+    }
+    public function updatePost(Request $request,User $user){
+        $arr = [];
+        foreach(User::FIELDS as $field => $data){
+            if($data['editable']) $arr[$field] = $data['validation'];
+        }
+        $this->validate($request,$arr);
+        foreach(User::FIELDS as $field => $data){
+            if($data['editable']) $user->$field = $request->$field;
+        }
+        $user->save();
+        return redirect(route('admin.users.view',$user))->with('status','Updated user.');
+
+    }
 }

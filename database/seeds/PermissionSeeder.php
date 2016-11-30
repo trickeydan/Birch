@@ -42,6 +42,10 @@ class PermissionSeeder extends Seeder
                     'name' => 'View Users',
                     'groups' => ['admin'],
                 ],
+                'admin.users.update' => [
+                    'name' => 'Update User Details',
+                    'groups' => ['admin'],
+                ],
         ];
         foreach ($permissions as $slug => $parameters){
             $perm = Permission::create([

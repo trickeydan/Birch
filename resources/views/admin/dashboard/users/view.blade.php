@@ -29,7 +29,7 @@
                 <div class="panel-heading">Options</div>
 
                 <div class="list-group">
-                    <a href="#"><button type="button" class="list-group-item disabled">Update Details</button></a>
+                    <a href="{{route('admin.users.view',$viewing->username)}}"><button type="button" class="list-group-item">Update Details</button></a>
                     <a href="#"><button type="button" class="list-group-item disabled">Reset Password</button></a>
                 </div>
             </div>
