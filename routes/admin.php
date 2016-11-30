@@ -24,6 +24,10 @@ Route::group(['prefix' => config('site.admin_url'),'middleware' => 'auth'],funct
 
         Route::get('changepassword','SettingsController@passwordChange')->middleware('perm:admin.settings.changepassword')->name('admin.settings.changepassword');
         Route::post('changepassword','SettingsController@passwordChangePost')->middleware('perm:admin.settings.changepassword')->name('admin.settings.changepassword.post');
+
+        Route::get('update','SettingsController@updateUser')->middleware('perm:admin.settings.update')->name('admin.settings.update');
+        Route::put('update','SettingsController@updateUserPost')->middleware('perm:admin.settings.update')->name('admin.settings.update');
+
     });
 
     Route::group(['prefix' => 'users'],function(){

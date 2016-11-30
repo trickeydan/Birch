@@ -22,6 +22,10 @@ class PermissionSeeder extends Seeder
                 'name' => 'Settings Index',
                 'groups' => ['default'],
             ],
+                'admin.settings.update' => [
+                    'name' => 'Update Own Info',
+                    'groups' => ['default'],
+                ],
                 'admin.settings.changepassword' => [
                     'name' => 'Change password',
                     'groups' => ['default'],

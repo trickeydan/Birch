@@ -29,7 +29,7 @@ class UserController extends Controller
 
         $newUser = User::newUser($request->username,$request->name,$request->email);
         if(!$newUser){
-            //False
+            return redirect(route('admin.users.create'))->withErrors(['That user could not be created.']);
         }
         return redirect(route('admin.users.view',$newUser->username));
     }

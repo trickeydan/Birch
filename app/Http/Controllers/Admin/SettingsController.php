@@ -38,4 +38,24 @@ class SettingsController extends Controller
 
         return redirect(route('admin.settings.index'))->with('status','Password Changed');
     }
+
+    public function updateUser(){
+        return view('admin.dashboard.settings.update',[
+            'fields' => User::FIELDS,
+        ]);
+    }
+
+    public function updateUserPost(Request $request){
+        $user = Auth::User();
+        $arr = [];
+        foreach(User::FIELDS as $field => $data){
+            if($data['editable']) $arr[$field] = $data['validation'];
+        }
+        $this->validate($request,$arr);
+        foreach(User::FIELDS as $field => $data){
+            if($data['editable']) $user->$field = $request->$field;
+        }
+        $user->save();
+        return redirect(route('admin.settings.index'))->with('status','Profile updated.');
+    }
 }

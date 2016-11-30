@@ -23,6 +23,12 @@ return [
             'perm' => 'admin.settings.index',
             'parent' => 'admin.dashboard',
         ],
+            'admin.settings.update' => [
+                'title' => 'Update Details',
+                'icon' => 'pencil',
+                'perm' => 'admin.settings.update',
+                'parent' => 'admin.settings.index',
+            ],
             'admin.settings.changepassword' => [
                 'title' => 'Change Password',
                 'icon' => 'key',

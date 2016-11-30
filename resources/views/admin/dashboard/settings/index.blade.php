@@ -30,7 +30,7 @@
 
                 <div class="list-group">
                     <a href="{{route('admin.settings.changepassword')}}"><button type="button" class="list-group-item">Change My Password</button></a>
-                    <a href="#"><button type="button" class="list-group-item disabled">Update My Details</button></a>
+                    <a href="{{route('admin.settings.update')}}"><button type="button" class="list-group-item">Update My Details</button></a>
                     <button type="button" class="list-group-item disabled">Report an issue</button>
                 </div>
             </div>
