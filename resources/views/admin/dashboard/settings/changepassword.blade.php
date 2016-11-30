@@ -27,7 +27,7 @@
         {!! Form::password('password_confirmation',['class' => 'form-control']) !!}
     </div>
 
-    <a href="#"><p class="btn btn-danger">Back to Settings</p></a>
+    <a href="{{route('admin.settings.index')}}"><p class="btn btn-danger">Back to Settings</p></a>
     {!! Form::submit('Change Password',['class' => 'btn btn-success']) !!}
 
 

@@ -24,6 +24,13 @@ class Group extends Model
     }
 
     public function hasPermission($permission){
-        return $this->permissions()->whereSlug($permission)->count() > 0;
+        if($this->permissions()->whereSlug($permission)->count() > 0){
+            return true;
+        }
+        if($this->parent != null){
+            return $this->parent->hasPermission($permission);
+        }
+        return false;
+
     }
 }

@@ -24,6 +24,24 @@ Route::group(['prefix' => config('site.admin_url'),'middleware' => 'auth'],funct
 
         Route::get('changepassword','SettingsController@passwordChange')->middleware('perm:admin.settings.changepassword')->name('admin.settings.changepassword');
         Route::post('changepassword','SettingsController@passwordChangePost')->middleware('perm:admin.settings.changepassword')->name('admin.settings.changepassword.post');
+
+        Route::get('update','SettingsController@updateUser')->middleware('perm:admin.settings.update')->name('admin.settings.update');
+        Route::put('update','SettingsController@updateUserPost')->middleware('perm:admin.settings.update')->name('admin.settings.update');
+
+    });
+
+    Route::group(['prefix' => 'users'],function(){
+        Route::get('/','UserController@index')->middleware('perm:admin.users.index')->name('admin.users.index');
+
+        Route::get('create','UserController@create')->middleware('perm:admin.users.create')->name('admin.users.create');
+        Route::post('create','UserController@createPost')->middleware('perm:admin.users.create')->name('admin.users.create');
+
+        Route::get('{user}','UserController@view')->middleware('perm:admin.users.view')->name('admin.users.view');
+
+        Route::get('{user}/update','UserController@update')->middleware('perm:admin.users.update')->name('admin.users.update');
+        Route::put('{user}/update','UserController@updatePost')->middleware('perm:admin.users.update')->name('admin.users.update');
+
+        Route::get('{user}/resetlink','UserController@sendResetLink')->middleware('perm:admin.users.sendresetlink')->name('admin.users.sendresetlink');
     });
 });
 

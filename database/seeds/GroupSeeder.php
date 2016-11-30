@@ -12,9 +12,15 @@ class GroupSeeder extends Seeder
      */
     public function run()
     {
-        Group::create([
+        $default = Group::create([
             'slug' => 'default',
             'name' => 'Default'
+        ]);
+
+        Group::create([
+            'slug' => 'admin',
+            'name' => 'Administrator',
+            'parentgroup_id' => $default->id,
         ]);
     }
 }

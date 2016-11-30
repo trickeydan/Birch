@@ -1,14 +1,14 @@
 @extends('admin.layouts.dashboard')
 
-@section('title','Settings')
-@section('description','Your Profile')
+@section('title','View User - ' . $viewing->name)
+@section('description','Manage User')
 
 @section('content')
     <div class="row">
         <div class="col-md-6">
             <div class="panel panel-primary">
                 <!-- Default panel contents -->
-                <div class="panel-heading">Your Details</div>
+                <div class="panel-heading">User Details</div>
 
                 <!-- Table -->
                 <table class="table">
@@ -16,7 +16,7 @@
                     @foreach($fields as $field => $data)
                         <tr>
                             <td>{{$data['title']}}</td>
-                            <td>{{$user->$field}}</td>
+                            <td>{{$viewing->$field}}</td>
                         </tr>
                     @endforeach
                     </tbody>
@@ -29,12 +29,10 @@
                 <div class="panel-heading">Options</div>
 
                 <div class="list-group">
-                    <a href="{{route('admin.settings.changepassword')}}"><button type="button" class="list-group-item">Change My Password</button></a>
-                    <a href="{{route('admin.settings.update')}}"><button type="button" class="list-group-item">Update My Details</button></a>
-                    <button type="button" class="list-group-item disabled">Report an issue</button>
+                    <a href="{{route('admin.users.view',$viewing->username)}}"><button type="button" class="list-group-item">Update Details</button></a>
+                    <a href="{{route('admin.users.sendresetlink',$viewing->username)}}"><button type="button" class="list-group-item">Send Password Reset Link</button></a>
                 </div>
             </div>
 
         </div>
-    </div>
 @endsection

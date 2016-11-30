@@ -22,9 +22,33 @@ class PermissionSeeder extends Seeder
                 'name' => 'Settings Index',
                 'groups' => ['default'],
             ],
+                'admin.settings.update' => [
+                    'name' => 'Update Own Info',
+                    'groups' => ['default'],
+                ],
                 'admin.settings.changepassword' => [
                     'name' => 'Change password',
-                    'groups' =>[],// ['default'],
+                    'groups' => ['default'],
+                ],
+            'admin.users.index' => [
+                'name' => 'Users Index',
+                'groups' => ['admin'],
+            ],
+                'admin.users.create' => [
+                    'name' => 'Create Users',
+                    'groups' => ['admin'],
+                ],
+                'admin.users.view' => [
+                    'name' => 'View Users',
+                    'groups' => ['admin'],
+                ],
+                'admin.users.update' => [
+                    'name' => 'Update User Details',
+                    'groups' => ['admin'],
+                ],
+                'admin.users.sendresetlink' => [
+                    'name' => 'Send Password Reset Link',
+                    'groups' => ['admin'],
                 ],
         ];
         foreach ($permissions as $slug => $parameters){
