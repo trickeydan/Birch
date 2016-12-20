@@ -35,6 +35,7 @@ class UserController extends Controller
     }
 
     public function view(User $user){
+        if($user->id == Auth::User()->id) return redirect(route('admin.settings.index'));
         return view('admin.dashboard.users.view',[
             'viewing' => $user,
             'fields' => User::FIELDS,
@@ -42,6 +43,7 @@ class UserController extends Controller
     }
 
     public function update(User $user){
+        if($user->id == Auth::User()->id) return redirect(route('admin.settings.index'));
         return view('admin.dashboard.users.update',[
             'viewing' => $user,
             'fields' => User::FIELDS,
@@ -49,6 +51,7 @@ class UserController extends Controller
     }
 
     public function updatePost(Request $request,User $user){
+        if($user->id == Auth::User()->id) return redirect(route('admin.settings.index'));
         $arr = [];
         foreach(User::FIELDS as $field => $data){
             if($data['editable']) $arr[$field] = $data['validation'];
@@ -63,6 +66,7 @@ class UserController extends Controller
     }
 
     public function sendResetLink(User $user){
+        if($user->id == Auth::User()->id) return redirect(route('admin.settings.index'));
         $user->sendResetLink();
         return redirect(route('admin.users.view',$user))->with('status','Reset link sent.');
     }

@@ -55,6 +55,10 @@ class GroupController extends Controller
         return redirect(route('admin.groups.view',$group))->with('status','Group Updated. Couldn\'t associate parent.');
     }
 
+    public function members(Group $group){
+        return view('admin.dashboard.groups.members',compact('group'));
+    }
+
     public function delete(Group $group){
         if($group->users()->count() != 0) return redirect(route('admin.groups.view',$group))->withErrors('Please remove all users before attempting to delete.');
         if($group->children()->count() != 0) return redirect(route('admin.groups.view',$group))->withErrors('Please remove all child groups before attempting to delete.');

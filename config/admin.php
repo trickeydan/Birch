@@ -88,7 +88,13 @@ return [
                 'title' => 'Update Group',
                 'icon' => 'lock',
                 'perm' => 'admin.groups.update',
-                'parent' => 'admin.groups.index',
+                'parent' => 'admin.groups.view',
+            ],
+            'admin.groups.members' =>[
+                'title' => 'View Group Members',
+                'icon' => 'lock',
+                'perm' => 'admin.groups.members',
+                'parent' => 'admin.groups.view',
             ],
             'admin.groups.delete' =>[
                 'title' => 'Dlete Group',
