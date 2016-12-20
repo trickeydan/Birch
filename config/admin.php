@@ -7,6 +7,7 @@ return [
         'admin.dashboard' => [],
 
         'admin.users.index' => [],
+        'admin.groups.index' => [],
 
     ],
 
@@ -65,6 +66,54 @@ return [
                 'perm' => 'admin.users.sendresetlink',
                 'parent' => 'admin.users.index',
             ],
+        'admin.groups.index' =>[
+            'title' => 'Groups',
+            'icon' => 'lock',
+            'perm' => 'admin.groups.index',
+            'parent' => 'admin.dashboard',
+        ],
+            'admin.groups.create' =>[
+                'title' => 'Create Group',
+                'icon' => 'lock',
+                'perm' => 'admin.groups.create',
+                'parent' => 'admin.groups.index',
+            ],
+            'admin.groups.view' =>[
+                'title' => 'View Group',
+                'icon' => 'lock',
+                'perm' => 'admin.groups.view',
+                'parent' => 'admin.groups.index',
+            ],
+            'admin.groups.update' =>[
+                'title' => 'Update Group',
+                'icon' => 'lock',
+                'perm' => 'admin.groups.update',
+                'parent' => 'admin.groups.view',
+            ],
+            'admin.groups.members' =>[
+                'title' => 'View Group Members',
+                'icon' => 'lock',
+                'perm' => 'admin.groups.members',
+                'parent' => 'admin.groups.view',
+            ],
+            'admin.groups.members.remove' =>[
+                'title' => 'Remove Group Members',
+                'icon' => 'lock',
+                'perm' => 'admin.groups.members.remove',
+                'parent' => 'admin.groups.view',
+            ],
+            'admin.groups.permissions' =>[
+                'title' => 'View Group Permissions',
+                'icon' => 'lock',
+                'perm' => 'admin.groups.permissions',
+                'parent' => 'admin.groups.view',
+            ],
+            'admin.groups.delete' =>[
+                'title' => 'Dlete Group',
+                'icon' => 'lock',
+                'perm' => 'admin.groups.delete',
+                'parent' => 'admin.groups.view',
+            ]
     ]
 
 

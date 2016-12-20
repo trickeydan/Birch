@@ -43,6 +43,26 @@ Route::group(['prefix' => config('site.admin_url'),'middleware' => 'auth'],funct
 
         Route::get('{user}/resetlink','UserController@sendResetLink')->middleware('perm:admin.users.sendresetlink')->name('admin.users.sendresetlink');
     });
+
+    Route::group(['prefix' => 'groups'],function(){
+       Route::get('/','GroupController@index')->middleware('perm:admin.groups.index')->name('admin.groups.index');
+
+       Route::get('create','GroupController@create')->middleware('perm:admin.groups.create')->name('admin.groups.create');
+       Route::post('create','GroupController@createPost')->middleware('perm:admin.groups.create')->name('admin.groups.create');
+
+       Route::get('{group}','GroupController@view')->middleware('perm:admin.groups.view')->name('admin.groups.view');
+
+       Route::get('{group}/update','GroupController@update')->middleware('perm:admin.groups.update')->name('admin.groups.update');
+       Route::put('{group}/update','GroupController@updatePost')->middleware('perm:admin.groups.update')->name('admin.groups.update');
+
+       Route::get('{group}/members','GroupController@members')->middleware('perm:admin.groups.members')->name('admin.groups.members');
+       Route::get('{group}/members/{user}/remove','GroupController@memberRemove')->middleware('perm:admin.groups.members.remove')->name('admin.groups.members.remove');
+
+        Route::get('{group}/permissions','GroupController@permissions')->middleware('perm:admin.groups.permissions')->name('admin.groups.permissions');
+
+       Route::get('{group}/delete','GroupController@delete')->middleware('perm:admin.groups.delete')->name('admin.groups.delete');
+
+    });
 });
 
 

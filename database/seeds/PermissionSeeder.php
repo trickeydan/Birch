@@ -50,6 +50,38 @@ class PermissionSeeder extends Seeder
                     'name' => 'Send Password Reset Link',
                     'groups' => ['admin'],
                 ],
+            'admin.groups.index' => [
+                'name' => 'Groups Index',
+                'groups' => ['admin'],
+            ],
+                'admin.groups.create' => [
+                    'name' => 'Create Groups',
+                    'groups' => ['admin'],
+                ],
+                'admin.groups.view' => [
+                    'name' => 'View Group',
+                    'groups' => ['admin'],
+                ],
+                'admin.groups.update' => [
+                    'name' => 'Update Group',
+                    'groups' => ['admin'],
+                ],
+                'admin.groups.members' => [
+                    'name' => 'View Group Members',
+                    'groups' => ['admin'],
+                ],
+                'admin.groups.members.remove' => [
+                    'name' => 'Remove Group Members',
+                    'groups' => ['admin'],
+                ],
+                'admin.groups.permissions' => [
+                    'name' => 'View Group Permissions',
+                    'groups' => ['admin'],
+                ],
+                'admin.groups.delete' => [
+                    'name' => 'Delete Group',
+                    'groups' => ['admin'],
+                ],
         ];
         foreach ($permissions as $slug => $parameters){
             $perm = Permission::create([
