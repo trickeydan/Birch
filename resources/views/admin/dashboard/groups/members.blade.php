@@ -16,7 +16,7 @@
                         @foreach($group->users as $member)
                             <tr>
                                 <td><a href="{{route('admin.users.view',$member)}}">{{$member->name}}&nbsp;({{$member->username}})</a></td>
-                                <td><a href="#">Remove</a></td>
+                                <td><a href="{{route('admin.groups.members.remove',[$group,$member])}}">Remove</a></td>
                             </tr>
                         @endforeach
                     </tbody>

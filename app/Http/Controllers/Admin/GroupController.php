@@ -4,11 +4,13 @@ namespace Birch\Http\Controllers\Admin;
 
 use Birch\Group;
 use Birch\Http\Controllers\Controller;
+use Birch\User;
 use Illuminate\Http\Request;
 
 use Birch\Http\Requests;
 use Birch\Http\Requests\GroupCreateRequest;
 use Birch\Http\Requests\GroupUpdateRequest;
+use Illuminate\Support\Facades\Auth;
 
 class GroupController extends Controller
 {
@@ -57,6 +59,15 @@ class GroupController extends Controller
 
     public function members(Group $group){
         return view('admin.dashboard.groups.members',compact('group'));
+    }
+
+    public function memberRemove(Group $group, User $user){
+        if($user->id == Auth::User()->id)  return redirect(route('admin.groups.members',$group))->withErrors('You cannot remove yourself from a group.');
+        if($user->group_id != $group->id) return redirect(route('admin.groups.members',$group))->withErrors('That user doesn\'t belong to that group.');
+        if($group->slug == 'default') return redirect(route('admin.groups.members',$group))->withErrors('You cannot remove users from this group.');
+        $user->group_id = Group::whereSlug('default')->first()->id;
+        $user->save();
+        return redirect(route('admin.groups.members',$group))->with('status',$user->name . ' has been removed from ' . $group->name . '.');
     }
 
     public function delete(Group $group){

@@ -28,7 +28,7 @@
                         <td>{{$grp->name}}</td>
                         <td>{{$grp->slug}}</td>
                         <td>{{$grp->parent or 'None'}}</td>
-                        <td>{{$grp->users->count()}}</td>
+                        <td><a href="{{route('admin.groups.members',$grp)}}">{{$grp->users->count()}}</a></td>
                         <td>{{$grp->children->count()}}</td>
                         <td><a href="{{route('admin.groups.view',$grp->slug)}}">View</a></td>
                     </tr>

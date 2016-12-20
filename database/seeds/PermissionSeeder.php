@@ -70,6 +70,10 @@ class PermissionSeeder extends Seeder
                     'name' => 'View Group Members',
                     'groups' => ['admin'],
                 ],
+                'admin.groups.members.remove' => [
+                    'name' => 'Remove Group Members',
+                    'groups' => ['admin'],
+                ],
                 'admin.groups.delete' => [
                     'name' => 'Delete Group',
                     'groups' => ['admin'],

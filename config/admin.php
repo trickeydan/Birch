@@ -96,6 +96,12 @@ return [
                 'perm' => 'admin.groups.members',
                 'parent' => 'admin.groups.view',
             ],
+            'admin.groups.members.remove' =>[
+                'title' => 'Remove Group Members',
+                'icon' => 'lock',
+                'perm' => 'admin.groups.members.remove',
+                'parent' => 'admin.groups.view',
+            ],
             'admin.groups.delete' =>[
                 'title' => 'Dlete Group',
                 'icon' => 'lock',
