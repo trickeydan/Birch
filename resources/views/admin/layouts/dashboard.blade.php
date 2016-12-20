@@ -7,7 +7,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>@yield('title') | {{config('site.title')}}</title>
         <!-- Styles -->
-        <link href="/css/app.css" rel="stylesheet">
+        <link href="/css/dashboard.css" rel="stylesheet">
 
         <!-- Scripts -->
         <script>
@@ -57,6 +57,12 @@
 
 
         </div>
+
+        <footer class="footer">
+            <div class="container">
+                Powered By <a href="https://birchcms.com">BirchCMS</a> v{{config('birch.version')}}
+            </div>
+        </footer>
 
         <script src="/js/app.js"></script>
 
