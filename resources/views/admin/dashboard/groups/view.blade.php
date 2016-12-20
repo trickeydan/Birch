@@ -43,7 +43,7 @@
                 <div class="panel-heading">Options</div>
 
                 <div class="list-group">
-                    <a href="#"><button type="button" class="list-group-item disabled">Permissions</button></a>
+                    <a href="{{route('admin.groups.permissions',$group)}}"><button type="button" class="list-group-item">Permissions</button></a>
                     <a href="{{route('admin.groups.members',$group)}}"><button type="button" class="list-group-item">Members</button></a>
                     <a href="{{route('admin.groups.update',$group)}}"><button type="button" class="list-group-item">Update Details</button></a>
                     <a href="{{route('admin.groups.delete',$group)}}"><button type="button" class="list-group-item">Delete Group</button></a>

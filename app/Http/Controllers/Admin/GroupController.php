@@ -70,6 +70,10 @@ class GroupController extends Controller
         return redirect(route('admin.groups.members',$group))->with('status',$user->name . ' has been removed from ' . $group->name . '.');
     }
 
+    public function permissions(Group $group){
+        return view('admin.dashboard.groups.permissions',compact('group'));
+    }
+
     public function delete(Group $group){
         if($group->users()->count() != 0) return redirect(route('admin.groups.view',$group))->withErrors('Please remove all users before attempting to delete.');
         if($group->children()->count() != 0) return redirect(route('admin.groups.view',$group))->withErrors('Please remove all child groups before attempting to delete.');
