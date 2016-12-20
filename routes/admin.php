@@ -46,6 +46,8 @@ Route::group(['prefix' => config('site.admin_url'),'middleware' => 'auth'],funct
 
     Route::group(['prefix' => 'groups'],function(){
        Route::get('/','GroupController@index')->middleware('perm:admin.groups.index')->name('admin.groups.index');
+       Route::get('create','GroupController@create')->middleware('perm:admin.groups.create')->name('admin.groups.create');
+       Route::post('create','GroupController@createPost')->middleware('perm:admin.groups.create')->name('admin.groups.create');
     });
 });
 

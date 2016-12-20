@@ -71,7 +71,13 @@ return [
             'icon' => 'lock',
             'perm' => 'admin.groups.index',
             'parent' => 'admin.dashboard',
-        ]
+        ],
+            'admin.groups.create' =>[
+                'title' => 'Create Group',
+                'icon' => 'lock',
+                'perm' => 'admin.groups.create',
+                'parent' => 'admin.groups.index',
+            ]
     ]
 
 

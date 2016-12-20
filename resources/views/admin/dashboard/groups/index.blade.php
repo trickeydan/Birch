@@ -8,7 +8,7 @@
         <!-- Default panel contents -->
         <div class="panel-heading">
             All Groups
-            <a href="#"><button class="btn btn-info btn-sm disabled" type="button">Create Group</button></a>
+            <a href="{{route('admin.groups.create')}}"><button class="btn btn-info btn-sm" type="button">Create Group</button></a>
         </div>
 
     @if($groups->count() != 0)
