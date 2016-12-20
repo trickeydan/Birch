@@ -32,7 +32,7 @@ class GroupController extends Controller
         if(Group::exists($request->parentgroup_id)){
             $g->parentgroup_id = Group::whereSlug($request->parentgroup_id)->first()->id;
             $g->save();
-            return redirect(route('admin.groups.view',))->with('status','Group Created.');
+            return redirect(route('admin.groups.view',$g))->with('status','Group Created.');
         }
         $g->save();
         return redirect(route('admin.groups.index'))->with('status','Group Created. Couldn\'t associate parent.');
@@ -40,5 +40,12 @@ class GroupController extends Controller
 
     public function view(Group $group){
         return view('admin.dashboard.groups.view',compact('group'));
+    }
+
+    public function delete(Group $group){
+        if($group->users()->count() != 0) return redirect(route('admin.groups.view',$group))->withErrors('Please remove all users before attempting to delete.');
+        if($group->children()->count() != 0) return redirect(route('admin.groups.view',$group))->withErrors('Please remove all child groups before attempting to delete.');
+        $group->delete();
+        return redirect(route('admin.groups.index'))->with('status','Group Deleted.');
     }
 }

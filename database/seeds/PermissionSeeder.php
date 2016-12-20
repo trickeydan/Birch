@@ -62,6 +62,10 @@ class PermissionSeeder extends Seeder
                     'name' => 'View Group',
                     'groups' => ['admin'],
                 ],
+                'admin.groups.delete' => [
+                    'name' => 'Delete Group',
+                    'groups' => ['admin'],
+                ],
         ];
         foreach ($permissions as $slug => $parameters){
             $perm = Permission::create([

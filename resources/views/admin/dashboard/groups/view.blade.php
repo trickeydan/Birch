@@ -46,7 +46,7 @@
                     <a href="#"><button type="button" class="list-group-item disabled">Permissions</button></a>
                     <a href="#"><button type="button" class="list-group-item disabled">Members</button></a>
                     <a href="#"><button type="button" class="list-group-item disabled">Update Details</button></a>
-                    <a href="#"><button type="button" class="list-group-item disabled">Delete Group</button></a>
+                    <a href="{{route('admin.groups.delete',$group)}}"><button type="button" class="list-group-item">Delete Group</button></a>
                 </div>
             </div>
 

@@ -83,6 +83,12 @@ return [
                 'icon' => 'lock',
                 'perm' => 'admin.groups.view',
                 'parent' => 'admin.groups.index',
+            ],
+            'admin.groups.delete' =>[
+                'title' => 'Dlete Group',
+                'icon' => 'lock',
+                'perm' => 'admin.groups.delete',
+                'parent' => 'admin.groups.view',
             ]
     ]
 
