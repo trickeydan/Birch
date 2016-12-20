@@ -30,7 +30,7 @@
                         <td>{{$grp->parent or 'None'}}</td>
                         <td>{{$grp->users->count()}}</td>
                         <td>{{$grp->children->count()}}</td>
-                        <td><a href="#">View</a></td>
+                        <td><a href="{{route('admin.groups.view',$grp->slug)}}">View</a></td>
                     </tr>
                 @endforeach
                 </tbody>

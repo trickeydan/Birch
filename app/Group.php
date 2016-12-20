@@ -10,6 +10,11 @@ class Group extends Model
 
     protected $visible = ['name'];
 
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
     public function __toString()
     {
         return $this->name;

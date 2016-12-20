@@ -58,6 +58,10 @@ class PermissionSeeder extends Seeder
                     'name' => 'Create Groups',
                     'groups' => ['admin'],
                 ],
+                'admin.groups.view' => [
+                    'name' => 'View Group',
+                    'groups' => ['admin'],
+                ],
         ];
         foreach ($permissions as $slug => $parameters){
             $perm = Permission::create([
