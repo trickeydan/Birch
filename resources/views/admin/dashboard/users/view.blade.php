@@ -29,7 +29,7 @@
                 <div class="panel-heading">Options</div>
 
                 <div class="list-group">
-                    <a href="{{route('admin.users.view',$viewing->username)}}"><button type="button" class="list-group-item">Update Details</button></a>
+                    <a href="{{route('admin.users.update',$viewing->username)}}"><button type="button" class="list-group-item">Update Details</button></a>
                     <a href="{{route('admin.users.sendresetlink',$viewing->username)}}"><button type="button" class="list-group-item">Send Password Reset Link</button></a>
                 </div>
             </div>
