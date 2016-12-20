@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 use Birch\Http\Requests;
 use Birch\Http\Requests\GroupCreateRequest;
+use Birch\Http\Requests\GroupUpdateRequest;
 
 class GroupController extends Controller
 {
@@ -17,11 +18,8 @@ class GroupController extends Controller
         ]);
     }
 
-    public function create(){ //ToDo: Make this neat, this code can and should be done better.
-        $groups = ['none' => 'None'];
-        foreach (Group::all() as $group){
-            $groups[$group->slug] = $group->name;
-        }
+    public function create(){
+        $groups = Group::listGroups();
         return view('admin.dashboard.groups.create',compact('groups'));
     }
 
@@ -40,6 +38,21 @@ class GroupController extends Controller
 
     public function view(Group $group){
         return view('admin.dashboard.groups.view',compact('group'));
+    }
+
+    public function update(Group $group){
+        $groups = Group::listGroups($group->slug);
+        return view('admin.dashboard.groups.update',compact('group','groups'));
+    }
+
+    public function updatePost(Group $group, GroupUpdateRequest $request){
+        $group->name = $request->name;
+        if(Group::exists($request->parentgroup_id) && $request->parentgroup_id != $group->slug){
+            $group->parentgroup_id = Group::whereSlug($request->parentgroup_id)->first()->id;
+            $group->save();
+            return redirect(route('admin.groups.view',$group))->with('status','Group Updated.');
+        }
+        return redirect(route('admin.groups.view',$group))->with('status','Group Updated. Couldn\'t associate parent.');
     }
 
     public function delete(Group $group){

@@ -51,6 +51,10 @@ Route::group(['prefix' => config('site.admin_url'),'middleware' => 'auth'],funct
        Route::post('create','GroupController@createPost')->middleware('perm:admin.groups.create')->name('admin.groups.create');
 
        Route::get('{group}','GroupController@view')->middleware('perm:admin.groups.view')->name('admin.groups.view');
+
+       Route::get('{group}/update','GroupController@update')->middleware('perm:admin.groups.update')->name('admin.groups.update');
+       Route::put('{group}/update','GroupController@updatePost')->middleware('perm:admin.groups.update')->name('admin.groups.update');
+
        Route::get('{group}/delete','GroupController@delete')->middleware('perm:admin.groups.delete')->name('admin.groups.delete');
 
     });

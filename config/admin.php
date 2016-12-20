@@ -84,6 +84,12 @@ return [
                 'perm' => 'admin.groups.view',
                 'parent' => 'admin.groups.index',
             ],
+            'admin.groups.update' =>[
+                'title' => 'Update Group',
+                'icon' => 'lock',
+                'perm' => 'admin.groups.update',
+                'parent' => 'admin.groups.index',
+            ],
             'admin.groups.delete' =>[
                 'title' => 'Dlete Group',
                 'icon' => 'lock',
