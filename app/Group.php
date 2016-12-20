@@ -28,7 +28,7 @@ class Group extends Model
     }
 
     public function children(){
-        return $this->hasMany('Birch\Group','id','parentgroup_id');
+        return $this->hasMany('Birch\Group','parentgroup_id','id');
     }
 
     public function hasPermission($permission){
