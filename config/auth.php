@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => Birch\User::class,
+            'model' => \Trickeydan\Birchcms\User::class,
         ],
 
         // 'users' => [

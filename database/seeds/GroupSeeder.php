@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Birch\Group;
+use Trickeydan\Birchcms\Group;
 
 class GroupSeeder extends Seeder
 {
