@@ -60,6 +60,11 @@
                 <div class="title m-b-md">
                     Birch
                 </div>
+                @if(Auth::guest())
+                    Not Logged In
+                @else
+                    Welcome {{Auth::User()->name}}
+                @endif
             </div>
         </div>
     </body>
