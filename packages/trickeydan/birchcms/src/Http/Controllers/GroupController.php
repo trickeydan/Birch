@@ -1,15 +1,13 @@
 <?php
 
-namespace Trickeydan\Birchcms\Controllers;
+namespace Trickeydan\Birchcms\Http\Controllers;
 
 use Birch\Group;
-use Birch\Http\Controllers\Controller;
 use Birch\User;
 use Illuminate\Http\Request;
 
-use Birch\Http\Requests;
-use Birch\Http\Requests\GroupCreateRequest;
-use Birch\Http\Requests\GroupUpdateRequest;
+use Trickeydan\Birchcms\Http\Requests\GroupCreateRequest;
+use Trickeydan\Birchcms\Http\Requests\GroupUpdateRequest;
 use Illuminate\Support\Facades\Auth;
 
 class GroupController extends Controller

@@ -25,7 +25,7 @@
                     <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
                 </div>
                 <div class="collapse navbar-collapse" id="navcol-1">
-                    @include('admin.layouts.menu')
+                    @include('birch::layouts.menu')
                 </div>
             </div>
         </nav>
@@ -34,7 +34,7 @@
             <div class="page-header">
                 <h1>@yield('title')<small> @yield('description')</small></h1>
                 <ol class="breadcrumb">
-                    {!!\Birch\Managers\BreadcrumbManager::getHtml(\Request::route()->getName(),'',true)!!}
+                    {!!\Trickeydan\Birchcms\Managers\BreadcrumbManager::getHtml(\Request::route()->getName(),'',true)!!}
                 </ol>
             </div>
 

@@ -1,4 +1,4 @@
-@extends('admin.layouts.dashboard')
+@extends('birch::layouts.dashboard')
 
 @section('title','Update Details')
 @section('description','Change your information')

@@ -1,8 +1,8 @@
 <?php
 
-namespace Birch;
+namespace Trickeydan\Birchcms;
 
-use Birch\Notifications\NewUser;
+use Trickeydan\Birchcms\Notifications\NewUser;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Barryvdh\Debugbar\Facade as Debugbar;
@@ -61,7 +61,7 @@ class User extends Authenticatable
     }
 
     public function group(){
-        return $this->belongsTo('Birch\Group');
+        return $this->belongsTo('Trickeydan\Birchcms\Group');
     }
 
     public static function newUser($username, $name,$email,$password = null){

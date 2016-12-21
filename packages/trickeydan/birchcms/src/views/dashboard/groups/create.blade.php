@@ -1,4 +1,4 @@
-@extends('admin.layouts.dashboard')
+@extends('birch::layouts.dashboard')
 
 @section('title','Create Group')
 @section('description','Add a new group')

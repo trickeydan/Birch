@@ -1,6 +1,6 @@
 <?php
 
-namespace Birch;
+namespace Trickeydan\Birchcms;
 
 use Illuminate\Database\Eloquent\Model;
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace Trickeydan\Birchcms\Controllers;
+namespace Trickeydan\Birchcms\Http\Controllers;
 
 use Birch\User;
 use Illuminate\Http\Request;
-use Birch\Http\Requests\CreateUserRequest;
+use Trickeydan\Birchcms\Http\Requests\CreateUserRequest;
 
 use Birch\Http\Requests;
 use Birch\Http\Controllers\Controller;

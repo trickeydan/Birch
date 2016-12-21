@@ -1,6 +1,6 @@
 <?php
 
-namespace Trickeydan\Birchcms\Middleware;
+namespace Trickeydan\Birchcms\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;

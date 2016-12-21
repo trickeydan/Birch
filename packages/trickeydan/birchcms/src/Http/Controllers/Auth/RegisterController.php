@@ -1,6 +1,6 @@
 <?php
 
-namespace Trickeydan\Birchcms\Controllers\Auth;
+namespace Trickeydan\Birchcms\Http\Controllers\Auth;
 
 use Birch\Group;
 use Birch\User;

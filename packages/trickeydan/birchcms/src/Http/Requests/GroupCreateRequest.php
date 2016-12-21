@@ -1,6 +1,6 @@
 <?php
 
-namespace Birch\Http\Requests;
+namespace Trickeydan\Birchcms\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;

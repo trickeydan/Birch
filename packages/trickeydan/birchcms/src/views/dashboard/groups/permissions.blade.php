@@ -1,4 +1,4 @@
-@extends('admin.layouts.dashboard')
+@extends('birch::layouts.dashboard')
 
 @section('title','Permissions - ' . $group->name)
 @section('description','Manage Group Permissions')

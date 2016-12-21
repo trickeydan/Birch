@@ -1,6 +1,6 @@
 <?php
 
-namespace Trickeydan\Birchcms\Controllers;
+namespace Trickeydan\Birchcms\Http\Controllers;
 
 use Birch\User;
 use Illuminate\Http\Request;
@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Birch\Http\Requests;
 use Birch\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use Birch\Notifications\PasswordChanged;
+use Trickeydan\Birchcms\Notifications\PasswordChanged;
 class SettingsController extends Controller
 {
     public function index()

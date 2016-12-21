@@ -1,6 +1,6 @@
 <?php
 
-namespace Birch;
+namespace Trickeydan\Birchcms;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -21,19 +21,19 @@ class Group extends Model
     }
 
     public function users(){
-        return $this->hasMany('Birch\User');
+        return $this->hasMany('Trickeydan\Birchcms\User');
     }
 
     public function permissions(){
-        return $this->belongsToMany('Birch\Permission');
+        return $this->belongsToMany('Trickeydan\Birchcms\Permission');
     }
 
     public function parent(){
-        return $this->belongsTo('Birch\Group','parentgroup_id');
+        return $this->belongsTo('Trickeydan\Birchcms\Group','parentgroup_id');
     }
 
     public function children(){
-        return $this->hasMany('Birch\Group','parentgroup_id','id');
+        return $this->hasMany('Trickeydan\Birchcms\Group','parentgroup_id','id');
     }
 
     public function hasPermission($permission){

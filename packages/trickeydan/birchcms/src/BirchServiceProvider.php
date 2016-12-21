@@ -17,7 +17,7 @@ class BirchServiceProvider extends ServiceProvider
      */
     public function boot(Router $router)
     {
-        $router->middleware('perm','Trickeydan\Birchcms\Middleware\CheckPermission');
+        $router->middleware('perm','Trickeydan\Birchcms\Http\Middleware\CheckPermission');
 
         $this->mergeConfigFrom(
             __DIR__.'/config/birch.php', 'birch'
@@ -42,7 +42,8 @@ class BirchServiceProvider extends ServiceProvider
             return Auth::validate(['username' => Auth::User()->username,'password' => $value]);
         });
 
-        view()->composer(config('birch.admin_url') . '/*', function ($view) {
+        //view()->composer(config('birch.admin_url') . '/*', function ($view) {
+        view()->composer('*', function ($view) {
 
             $view->with('menu',config('pages.menu'));
             $view->with('pages',config('pages.pages'));
@@ -58,12 +59,14 @@ class BirchServiceProvider extends ServiceProvider
     {
         Route::group([
             'middleware' => 'web',
-            'namespace' => 'Trickeydan\Birchcms\Controllers',
+            'namespace' => 'Trickeydan\Birchcms\Http\Controllers',
         ], function ($router) {
             include __DIR__ . '/routes.php';
         });
 
-        $this->app->make('Trickeydan\Birchcms\Controllers\DashboardController');
-        $this->app->make('Trickeydan\Birchcms\Controllers\GroupController');
+        $this->app->make('Trickeydan\Birchcms\Http\Controllers\DashboardController');
+        $this->app->make('Trickeydan\Birchcms\Http\Controllers\GroupController');
+        $this->app->make('Trickeydan\Birchcms\Http\Controllers\UserController');
+        $this->app->make('Trickeydan\Birchcms\Http\Controllers\SettingsController');
     }
 }

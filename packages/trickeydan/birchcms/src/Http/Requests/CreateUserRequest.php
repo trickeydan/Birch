@@ -1,12 +1,12 @@
 <?php
 
-namespace Birch\Http\Requests;
+namespace Trickeydan\Birchcms\Http\Requests;
 
+use Birch\User;
 use Illuminate\Foundation\Http\FormRequest;
-
 use Illuminate\Support\Facades\Auth;
 
-class GroupUpdateRequest extends FormRequest
+class CreateUserRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -15,7 +15,7 @@ class GroupUpdateRequest extends FormRequest
      */
     public function authorize()
     {
-        return Auth::User()->hasPermission('admin.groups.update');
+        return Auth::User()->hasPermission('admin.users.create');
     }
 
     /**
@@ -25,9 +25,11 @@ class GroupUpdateRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'name' => 'required|max:50|min:2',
-        ];
+        $rules = [];
+        foreach (User::FIELDS as $field => $value){
+            $rules[$field] = $value['validation'];
+        }
+        return $rules;
     }
 
     protected function failedAuthorization(){

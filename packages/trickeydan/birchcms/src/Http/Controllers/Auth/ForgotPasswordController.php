@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Trickeydan\Birchcms\Controllers\Auth;
+namespace Trickeydan\Birchcms\Http\Controllers\Auth;
 
 use Birch\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;

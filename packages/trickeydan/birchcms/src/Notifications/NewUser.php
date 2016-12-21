@@ -1,13 +1,13 @@
 <?php
 
-namespace Birch\Notifications;
+namespace Trickeydan\Birchcms\Notifications;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class PasswordChanged extends Notification
+class NewUser extends Notification
 {
     use Queueable;
 
@@ -16,9 +16,9 @@ class PasswordChanged extends Notification
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($password)
     {
-        //
+        $this->password = $password;
     }
 
     /**
@@ -41,10 +41,12 @@ class PasswordChanged extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->subject('Your Password Has Been Changed')
+            ->subject('Your Account on ' . config('site.title'))
             ->greeting('Hello, ' . $notifiable->name)
-            ->line('Your password on ' . config('site.title') . ' has been changed.')
-            ->line('If this is unexpected, please contact your site administrator immediately.');
+            ->line('Your account on ' . config('site.title') . ' has been created.')
+            ->line('Your username is ' . $notifiable->username)
+            ->line('Your password is ' . $this->password)
+            ->line('For security, please change this immediately. This can be accessed from the settings menu.');
     }
 
     /**

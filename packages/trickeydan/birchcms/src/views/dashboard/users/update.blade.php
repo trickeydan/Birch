@@ -1,4 +1,4 @@
-@extends('admin.layouts.dashboard')
+@extends('birch::layouts.dashboard')
 
 @section('title','Update User - ' . $viewing->name)
 @section('description','Update user\'s information')

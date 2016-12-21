@@ -1,12 +1,12 @@
 <?php
 
-namespace Birch;
+namespace Trickeydan\Birchcms;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Permission extends Model
 {
     public function groups(){
-        return $this->belongsToMany('Birch\Group');
+        return $this->belongsToMany('Trickeydan\Birchcms\Group');
     }
 }

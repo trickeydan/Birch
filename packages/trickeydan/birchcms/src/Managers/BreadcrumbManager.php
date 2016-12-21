@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Birch\Managers;
+namespace Trickeydan\Birchcms\Managers;
 
 use Illuminate\Support\Facades\Route;
 use Barryvdh\Debugbar\Facade as Debug;
@@ -45,7 +45,7 @@ class BreadcrumbManager
     }
 
     public static function getDetails($route){
-        return config('admin.pages')[$route];
+        return config('pages.pages')[$route];
     }
 
     public static function getParams($route){
