@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Birch\Permission;
-use Birch\Group;
+use Trickeydan\Birchcms\Permission;
+use Trickeydan\Birchcms\Group;
 
 class PermissionSeeder extends Seeder
 {

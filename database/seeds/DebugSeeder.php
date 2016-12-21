@@ -11,12 +11,12 @@ class DebugSeeder extends Seeder
      */
     public function run()
     {
-        \Birch\User::create([
+        Trickeydan\Birchcms\User::create([
             'name' => 'Test User',
             'username' => 'test',
             'email' => 'test@dev.trickey.xyz',
             'password' => bcrypt('password'),
-            'group_id' => \Birch\Group::whereSlug('admin')->first()->id,
+            'group_id' => Trickeydan\Birchcms\Group::whereSlug('admin')->first()->id,
         ]);
     }
 }

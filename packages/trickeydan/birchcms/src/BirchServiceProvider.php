@@ -18,6 +18,7 @@ class BirchServiceProvider extends ServiceProvider
     public function boot(Router $router)
     {
         $router->middleware('perm','Trickeydan\Birchcms\Http\Middleware\CheckPermission');
+        $this->loadMigrationsFrom(__DIR__.'/migrations');
 
         $this->mergeConfigFrom(
             __DIR__.'/config/birch.php', 'birch'
