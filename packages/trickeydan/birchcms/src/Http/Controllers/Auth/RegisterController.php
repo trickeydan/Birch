@@ -2,9 +2,8 @@
 
 namespace Trickeydan\Birchcms\Http\Controllers\Auth;
 
-use Birch\Group;
-use Birch\User;
-use Birch\Http\Controllers\Controller;
+use Trickeydan\Birchcms\User;
+use Trickeydan\Birchcms\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 

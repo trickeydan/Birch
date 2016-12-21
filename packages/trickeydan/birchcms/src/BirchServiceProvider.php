@@ -21,15 +21,15 @@ class BirchServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/migrations');
 
         $this->mergeConfigFrom(
-            __DIR__.'/config/birch.php', 'birch'
+            __DIR__.'/config/birch_general.php', 'birch'
         );
         $this->mergeConfigFrom(
-            __DIR__.'/config/pages.php', 'pages'
+            __DIR__.'/config/birch_pages.php', 'pages'
         );
 
-        /*$this->publishes([
-            __DIR__.'/config/birch.php' => config_path('birch.php'),
-        ]);*/
+        $this->publishes([
+            __DIR__.'/assets/compiled' => public_path(),
+        ], 'public');
 
         $this->loadViewsFrom(__DIR__.'/views', 'birch');
 

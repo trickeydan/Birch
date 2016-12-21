@@ -4,7 +4,6 @@
 namespace Trickeydan\Birchcms\Managers;
 
 use Illuminate\Support\Facades\Route;
-use Barryvdh\Debugbar\Facade as Debug;
 
 class BreadcrumbManager
 {

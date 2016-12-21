@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <title>@yield('title') | {{config('site.title')}}</title>
+        <title>@yield('title') | {{config('birch.site_title')}}</title>
         <!-- Styles -->
         <link href="/css/dashboard.css" rel="stylesheet">
 
@@ -21,7 +21,7 @@
     <body>
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
-                <div class="navbar-header"><a class="navbar-brand navbar-link" href="{{route('admin.dashboard')}}">{{config('site.title')}}</a>
+                <div class="navbar-header"><a class="navbar-brand navbar-link" href="{{route('admin.dashboard')}}">{{config('birch.site_title')}}</a>
                     <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
                 </div>
                 <div class="collapse navbar-collapse" id="navcol-1">

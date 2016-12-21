@@ -2,7 +2,7 @@
 
 namespace Trickeydan\Birchcms\Http\Requests;
 
-use Birch\User;
+use Trickeydan\Birchcms\User;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 

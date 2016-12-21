@@ -3,7 +3,7 @@
 
 namespace Trickeydan\Birchcms\Http\Controllers\Auth;
 
-use Birch\Http\Controllers\Controller;
+use Trickeydan\Birchcms\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 
 class ForgotPasswordController extends Controller

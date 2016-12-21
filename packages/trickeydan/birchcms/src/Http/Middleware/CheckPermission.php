@@ -4,7 +4,7 @@ namespace Trickeydan\Birchcms\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
-use Birch\Http\Controllers\Admin\Auth\LoginController;
+use Trickeydan\Birchcms\Http\Controllers\Auth\LoginController;
 
 class CheckPermission
 {

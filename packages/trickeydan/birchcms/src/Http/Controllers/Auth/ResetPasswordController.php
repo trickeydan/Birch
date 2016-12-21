@@ -1,7 +1,8 @@
 <?php
 
 namespace Trickeydan\Birchcms\Http\Controllers\Auth;
-use Birch\Http\Controllers\Controller;
+
+use Trickeydan\Birchcms\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class ResetPasswordController extends Controller
