@@ -1,0 +1,14 @@
+{
+    "name": "trickeydan/birchcms",
+    "description": "Birch CMS - The ultra flexible CMS framework",
+    "type": "library",
+    "license": "GPL v3",
+    "authors": [
+        {
+            "name": "Dan Trickey",
+            "email": "contact@trickey.xyz"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

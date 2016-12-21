@@ -16,7 +16,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->composer('*', function ($view) {
+        /*view()->composer('*', function ($view) {
             if(Auth::check()){
                 $view->with('user',Auth::User());
             }
@@ -29,7 +29,7 @@ class AppServiceProvider extends ServiceProvider
         view()->composer(config('site.admin_url') . '/*', function ($view) {
             $view->with('menu',config('admin.menu'));
             $view->with('pages',config('admin.pages'));
-        });
+        });*/
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace Birch\Http\Controllers\Admin;
+namespace Trickeydan\Birchcms\Controllers;
 
 use Birch\User;
 use Illuminate\Http\Request;
@@ -13,14 +13,14 @@ class SettingsController extends Controller
 {
     public function index()
     {
-        return view('admin.dashboard.settings.index',[
+        return view('birch::dashboard.settings.index',[
             'fields' => User::FIELDS,
         ]);
     }
 
     public function passwordChange(Request $request)
     {
-        return view('admin.dashboard.settings.changepassword');
+        return view('birch::dashboard.settings.changepassword');
     }
 
     public function passwordChangePost(Request $request)
@@ -40,7 +40,7 @@ class SettingsController extends Controller
     }
 
     public function updateUser(){
-        return view('admin.dashboard.settings.update',[
+        return view('birch::dashboard.settings.update',[
             'fields' => User::FIELDS,
         ]);
     }

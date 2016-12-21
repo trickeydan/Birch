@@ -54,6 +54,6 @@ class Kernel extends HttpKernel
         'guest' => \Birch\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
 
-        'perm' => CheckPermission::class,
+        //'perm' => CheckPermission::class,
     ];
 }

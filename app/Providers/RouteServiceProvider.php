@@ -51,12 +51,12 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapAdminRoutes()
     {
-        Route::group([
+        /*Route::group([
             'middleware' => 'web',
             'namespace' => $this->namespace . '\Admin',
         ], function ($router) {
             require base_path('routes/admin.php');
-        });
+        });*/
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace Birch\Http\Controllers\Admin\Auth;
+namespace Trickeydan\Birchcms\Controllers\Auth;
 use Birch\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
@@ -37,5 +37,12 @@ class ResetPasswordController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+    }
+
+    public function showResetForm(Request $request, $token = null)
+    {
+        return view('birch::auth.passwords.reset')->with(
+            ['token' => $token, 'email' => $request->email]
+        );
     }
 }

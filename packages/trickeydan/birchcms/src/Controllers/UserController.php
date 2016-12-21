@@ -1,6 +1,6 @@
 <?php
 
-namespace Birch\Http\Controllers\Admin;
+namespace Trickeydan\Birchcms\Controllers;
 
 use Birch\User;
 use Illuminate\Http\Request;
@@ -14,13 +14,13 @@ class UserController extends Controller
 {
 
     public function index(){
-        return view('admin.dashboard.users.index',[
+        return view('birch::dashboard.users.index',[
             'users' => User::where('id','!=',Auth::User()->id)->get()
         ]);
     }
 
     public function create(){
-        return view('admin.dashboard.users.create',[
+        return view('birch::dashboard.users.create',[
             'fields' => User::FIELDS,
         ]);
     }
@@ -36,7 +36,7 @@ class UserController extends Controller
 
     public function view(User $user){
         if($user->id == Auth::User()->id) return redirect(route('admin.settings.index'));
-        return view('admin.dashboard.users.view',[
+        return view('birch::dashboard.users.view',[
             'viewing' => $user,
             'fields' => User::FIELDS,
         ]);
@@ -44,7 +44,7 @@ class UserController extends Controller
 
     public function update(User $user){
         if($user->id == Auth::User()->id) return redirect(route('admin.settings.index'));
-        return view('admin.dashboard.users.update',[
+        return view('birch::dashboard.users.update',[
             'viewing' => $user,
             'fields' => User::FIELDS,
         ]);

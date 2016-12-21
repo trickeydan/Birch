@@ -1,6 +1,6 @@
 <?php
 
-namespace Birch\Http\Controllers\Admin\Auth;
+namespace Trickeydan\Birchcms\Controllers\Auth;
 
 use Birch\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -43,5 +43,10 @@ class LoginController extends Controller
     public function username()
     {
         return 'username';
+    }
+
+    public function showLoginForm()
+    {
+        return view('birch::auth.login');
     }
 }

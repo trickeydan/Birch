@@ -1,6 +1,6 @@
 <?php
 
-namespace Birch\Http\Controllers\Admin\Auth;
+namespace Trickeydan\Birchcms\Controllers\Auth;
 
 use Birch\Group;
 use Birch\User;
@@ -71,8 +71,8 @@ class RegisterController extends Controller
     }
 
     public function showRegistrationForm(){
-        if(config('site.enable_user_registration')){
-            return view('auth.register');
+        if(config('birch.enable_user_registration')){
+            return view('birch::auth.register');
         }else{
             return redirect('login');
         }

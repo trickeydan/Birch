@@ -1,28 +1,13 @@
-@extends('auth.layout')
+@extends('birch::auth.layout')
 
-@section('title','Register')
+@section('title','Reset Password')
 
 @section('content')
-    <form class="form" role="form" method="POST" action="{{ url('/register') }}">
+
+    <form class="form" role="form" method="POST" action="{{ url('/password/reset') }}">
         {{ csrf_field() }}
 
-        <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
-            <input class="form-control" type="text" name="username" placeholder="Username" value="{{ old('username') }}" required autofocus>
-            @if ($errors->has('username'))
-                <span class="help-block">
-                    <strong>{{ $errors->first('username') }}</strong>
-                </span>
-            @endif
-        </div>
-
-        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-            <input class="form-control" type="text" name="name" placeholder="Name" value="{{ old('name') }}" required>
-            @if ($errors->has('name'))
-                <span class="help-block">
-                    <strong>{{ $errors->first('name') }}</strong>
-                </span>
-            @endif
-        </div>
+        <input type="hidden" name="token" value="{{ $token }}">
 
         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
             <input class="form-control" type="email" name="email" placeholder="Email" value="{{ old('email') }}" required>
@@ -52,7 +37,7 @@
         </div>
 
         <div class="form-group">
-            <button class="btn btn-primary btn-block" type="submit">Register</button>
+            <button class="btn btn-primary btn-block" type="submit">Reset Password</button>
         </div>
     </form>
 @endsection

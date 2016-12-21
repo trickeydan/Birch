@@ -1,6 +1,6 @@
 <?php
 
-namespace Birch\Http\Controllers\Admin;
+namespace Trickeydan\Birchcms\Controllers;
 
 use Birch\Group;
 use Birch\Http\Controllers\Controller;
@@ -15,14 +15,14 @@ use Illuminate\Support\Facades\Auth;
 class GroupController extends Controller
 {
     public function index(){
-        return view('admin.dashboard.groups.index',[
+        return view('birch::dashboard.groups.index',[
             'groups' => Group::all()
         ]);
     }
 
     public function create(){
         $groups = Group::listGroups();
-        return view('admin.dashboard.groups.create',compact('groups'));
+        return view('birch::dashboard.groups.create',compact('groups'));
     }
 
     public function createPost(GroupCreateRequest $request){
@@ -39,12 +39,12 @@ class GroupController extends Controller
     }
 
     public function view(Group $group){
-        return view('admin.dashboard.groups.view',compact('group'));
+        return view('birch::dashboard.groups.view',compact('group'));
     }
 
     public function update(Group $group){
         $groups = Group::listGroups($group->slug);
-        return view('admin.dashboard.groups.update',compact('group','groups'));
+        return view('birch::dashboard.groups.update',compact('group','groups'));
     }
 
     public function updatePost(Group $group, GroupUpdateRequest $request){
@@ -58,7 +58,7 @@ class GroupController extends Controller
     }
 
     public function members(Group $group){
-        return view('admin.dashboard.groups.members',compact('group'));
+        return view('birch::dashboard.groups.members',compact('group'));
     }
 
     public function memberRemove(Group $group, User $user){
@@ -71,7 +71,7 @@ class GroupController extends Controller
     }
 
     public function permissions(Group $group){
-        return view('admin.dashboard.groups.permissions',compact('group'));
+        return view('birch::dashboard.groups.permissions',compact('group'));
     }
 
     public function delete(Group $group){

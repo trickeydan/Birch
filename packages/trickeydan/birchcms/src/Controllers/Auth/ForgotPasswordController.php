@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Birch\Http\Controllers\Admin\Auth;
+namespace Trickeydan\Birchcms\Controllers\Auth;
 
 use Birch\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
@@ -32,8 +32,8 @@ class ForgotPasswordController extends Controller
     }
 
     public function showLinkRequestForm(){
-        if(config('site.enable_password_reset')){
-            return view('auth.passwords.email');
+        if(config('birch.enable_password_reset')){
+            return view('birch::auth.passwords.email');
         }else{
             return redirect('login');
         }

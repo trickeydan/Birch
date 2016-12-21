@@ -1,4 +1,4 @@
-@extends('auth.layout')
+@extends('birch::auth.layout')
 
 @section('title','Reset Password')
 
