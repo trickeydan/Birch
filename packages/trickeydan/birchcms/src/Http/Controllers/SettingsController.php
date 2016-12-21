@@ -2,11 +2,9 @@
 
 namespace Trickeydan\Birchcms\Http\Controllers;
 
-use Birch\User;
+use Trickeydan\Birchcms\User;
 use Illuminate\Http\Request;
 
-use Birch\Http\Requests;
-use Birch\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Trickeydan\Birchcms\Notifications\PasswordChanged;
 class SettingsController extends Controller
@@ -18,7 +16,7 @@ class SettingsController extends Controller
         ]);
     }
 
-    public function passwordChange(Request $request)
+    public function passwordChange()
     {
         return view('birch::dashboard.settings.changepassword');
     }

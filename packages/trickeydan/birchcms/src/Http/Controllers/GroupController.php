@@ -2,9 +2,8 @@
 
 namespace Trickeydan\Birchcms\Http\Controllers;
 
-use Birch\Group;
-use Birch\User;
-use Illuminate\Http\Request;
+use Trickeydan\Birchcms\Group;
+use Trickeydan\Birchcms\User;
 
 use Trickeydan\Birchcms\Http\Requests\GroupCreateRequest;
 use Trickeydan\Birchcms\Http\Requests\GroupUpdateRequest;
