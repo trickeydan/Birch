@@ -2,11 +2,13 @@
 
 namespace Trickeydan\Birchcms;
 
+use Trickeydan\Birchcms\Commands\PermissionSeed;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
+use Trickeydan\Birchcms\Commands\SetupCommand;
 
 class BirchServiceProvider extends ServiceProvider
 {
@@ -17,6 +19,13 @@ class BirchServiceProvider extends ServiceProvider
      */
     public function boot(Router $router)
     {
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                SetupCommand::class,
+                PermissionSeed::class,
+            ]);
+        }
+
         $router->middleware('perm','Trickeydan\Birchcms\Http\Middleware\CheckPermission');
         $this->loadMigrationsFrom(__DIR__.'/migrations');
 
