@@ -8,6 +8,7 @@
         <title>@yield('title') | {{config('birch.site_title')}}</title>
         <!-- Styles -->
         <link href="/css/dashboard.css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
         <!-- Scripts -->
         <script>
@@ -60,7 +61,7 @@
 
         <footer class="footer">
             <div class="container">
-                Powered By <a href="https://birchcms.com">BirchCMS</a> v{{config('birch.version')}}
+                Powered By <a href="https://birchcms.com">BirchCMS</a> {{config('birch.version')}}
             </div>
         </footer>
 

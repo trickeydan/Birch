@@ -81,9 +81,6 @@ class User extends Authenticatable
 
 
     public function hasPermission($permission){
-        if($this->group->hasPermission($permission)){
-            Debugbar::info($permission);
-        }
         return $this->group->hasPermission($permission);
     }
 
