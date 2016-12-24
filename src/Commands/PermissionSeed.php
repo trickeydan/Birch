@@ -4,6 +4,7 @@ namespace Trickeydan\Birchcms\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 use Trickeydan\Birchcms\Permission;
 use Trickeydan\Birchcms\Group;
 
@@ -111,6 +112,8 @@ class PermissionSeed extends Command
                 'groups' => ['admin'],
             ],
         ];
+        Permission::truncate();
+        DB::table('group_permission')->truncate();
         foreach ($permissions as $slug => $parameters){
             $perm = Permission::create([
                 'slug' => $slug,
