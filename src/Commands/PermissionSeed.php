@@ -116,6 +116,10 @@ class PermissionSeed extends Command
                 'name' => 'View all pages',
                 'groups' => ['admin'],
             ],
+            'admin.pages.create' => [
+                'name' => 'Create page',
+                'groups' => ['default'],
+            ],
         ];
         foreach ($permissions as $slug => $parameters){
             $perm = Permission::create([
