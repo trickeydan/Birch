@@ -62,5 +62,9 @@ Route::group(['prefix' => config('birch.admin_url'),'middleware' => 'auth'],func
         Route::get('{group}/delete','GroupController@delete')->middleware('perm:admin.groups.delete')->name('admin.groups.delete');
 
     });
+
+    Route::group(['prefix' => 'pages'],function(){
+        Route::get('/','PageController@index')->middleware('perm:admin.pages.index')->name('admin.pages.index');
+    });
 });
 

@@ -8,6 +8,7 @@ return [
 
         'admin.users.index' => [],
         'admin.groups.index' => [],
+        'admin.pages.index' => [],
 
     ],
 
@@ -113,7 +114,13 @@ return [
                 'icon' => 'lock',
                 'perm' => 'admin.groups.delete',
                 'parent' => 'admin.groups.view',
-            ]
+            ],
+        'admin.pages.index' =>[
+            'title' => 'Pages',
+            'icon' => 'file-o',
+            'perm' => 'admin.pages.index',
+            'parent' => 'admin.dashboard',
+        ],
     ]
 
 

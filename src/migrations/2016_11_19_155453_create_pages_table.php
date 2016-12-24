@@ -20,6 +20,9 @@ class CreatePagesTable extends Migration
             $table->string('description');
             $table->text('content');
 
+            $table->integer('ownable_id');
+            $table->integer('ownable_type');
+
             $table->timestamps();
         });
     }

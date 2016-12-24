@@ -36,6 +36,10 @@ class Group extends Model
         return $this->hasMany('Trickeydan\Birchcms\Group','parentgroup_id','id');
     }
 
+    public function pages(){
+        return $this->morphMany('Trickeydan\Birchcms\Page','ownable');
+    }
+
     public function hasPermission($permission){
         if($this->permissions()->whereSlug($permission)->count() > 0){
             return true;

@@ -64,6 +64,10 @@ class User extends Authenticatable
         return $this->belongsTo('Trickeydan\Birchcms\Group');
     }
 
+    public function pages(){
+        return $this->morphMany('Trickeydan\Birchcms\Page','ownable');
+    }
+
     public static function newUser($username, $name,$email,$password = null){
         if($password == null){
             $password = str_random();
