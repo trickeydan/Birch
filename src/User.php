@@ -65,7 +65,11 @@ class User extends Authenticatable
     }
 
     public function pages(){
-        return $this->morphMany('Trickeydan\Birchcms\Page','ownable');
+        if($this->hasPermission('admin.pages.view.*')){
+            return Page::all();
+        }else{
+            return $this->morphMany('Trickeydan\Birchcms\Page','ownable');
+        }
     }
 
     public static function newUser($username, $name,$email,$password = null){

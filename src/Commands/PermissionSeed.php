@@ -112,6 +112,10 @@ class PermissionSeed extends Command
                 'name' => 'View Pages Index',
                 'groups' => ['default'],
             ],
+            'admin.pages.view.*' => [
+                'name' => 'View all pages',
+                'groups' => ['admin'],
+            ],
         ];
         foreach ($permissions as $slug => $parameters){
             $perm = Permission::create([
