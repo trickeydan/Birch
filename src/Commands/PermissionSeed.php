@@ -3,6 +3,7 @@
 namespace Trickeydan\Birchcms\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Database\Eloquent\Model;
 use Trickeydan\Birchcms\Permission;
 use Trickeydan\Birchcms\Group;
 
@@ -39,6 +40,7 @@ class PermissionSeed extends Command
      */
     public function handle()
     {
+        Model::unguard();
         $permissions = [
             'admin.dashboard' => [
                 'name' => 'Dashboard',
@@ -118,5 +120,6 @@ class PermissionSeed extends Command
                 $perm->groups()->attach(Group::whereSlug($group)->first()->id);
             }
         }
+        Model::reguard();
     }
 }
