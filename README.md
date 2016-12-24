@@ -14,7 +14,13 @@ Install the Birch package by running
 
 `composer require trickeydan/birchcms`
 
-Add the BirchServiceProvider to the `config/app.php`
+Add the `Trickeydan\Birchcms\BirchServiceProvider` to the `config/app.php`
+Add the `Collective\HtmlServiceProvider` to the array also.
+Add the following lines to the Facades option:
+````
+'Form' => \Collective\Html\FormFacade::class,
+'Html' => \Collective\Html\HtmlFacade::class,
+````
 
 Add your database and email details to `.env`
 
